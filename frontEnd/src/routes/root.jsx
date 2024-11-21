@@ -9,6 +9,9 @@ export default function Root() {
                 <NavLink to="/inventory">
                     <button>inventory</button> 
                 </NavLink>
+                <NavLink to="/admin">
+                <button>Admin</button>
+                </NavLink>
             </header>
             <Outlet></Outlet>
         </div>
