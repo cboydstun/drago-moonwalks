@@ -1,5 +1,4 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Admin from "../components/Admin";
 
 export default function Root() {
     return(
@@ -14,7 +13,7 @@ export default function Root() {
                 <NavLink to="/inventory">
                     <button className="bg-red-600 hover:bg-white hover:text-red-600 text-white font-bold py-1 px-4 rounded-full mr-2" >Inventory</button> 
                 </NavLink>
-                <NavLink to="/admin">
+                <NavLink to="/login">
                 <button className="bg-yellow-600 hover:bg-white hover:text-yellow-600 text-white font-bold py-1 px-4 rounded-full">Admin</button>
                 </NavLink>
             <img 

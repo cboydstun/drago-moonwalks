@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Admin() {
+export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -42,22 +42,24 @@ export default function Admin() {
                         <label className="bg-red-600 text-white font-bold rounded-md">Username: </label>
                         <input 
                         type="text"
+                        placeholder="Username"
                         id="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
-                        className="rounded-md text-red-600"
+                        className="rounded-md text-red-600 text-center"
                         />
                     </div>
                     <div>
                         <label className="bg-yellow-600 text-white font-bold rounded-md">Password: </label>
                         <input
-                        type="text"
+                        type="password"
+                        placeholder="Password"
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="rounded-md text-yellow-600"
+                        className="rounded-md text-yellow-600 text-center"
                         />
                     </div>
                     <button type="submit" className="w-20 bg-red-600 text-yellow-600 hover:bg-white hover:text-red-600 font-bold rounded-xl">Login</button>
