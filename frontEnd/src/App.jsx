@@ -54,6 +54,10 @@ function App() {
           path: "login",
           element: <Login></Login>
         },
+        {
+          path: "all",
+          element: <Inventory></Inventory>
+        },
       ],
     },
   ]);
