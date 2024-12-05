@@ -6,7 +6,7 @@ const router = Router();
 const adminUsername = "manuelprito";
 const passwordHash = "$2b$10$LeiReDIs5tnnKx1/H64doeSqa0ot0rngcww22bO3Bx2G9UDtby0IK"
 
-router.post("/admin", async (req, res)=> {
+router.post("/login", async (req, res)=> {
 
         const { username, password } = req.body;
     
