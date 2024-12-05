@@ -18,7 +18,7 @@ export default function Root() {
                 </NavLink>
             <img 
                 className="rounded-sm absolute top-6 left-6 w-60 h-auto sm:w-40 md:w-40 lg:w-52 xl:w-60"
-                src="./assets/DragoPic.png"
+                src="src/routes/assets/DragoPic.png"
                 alt="Moonwalks For You!"></img>
             </main>
             <Outlet></Outlet>
