@@ -20,11 +20,30 @@ router.get("/inventory/:id", async (req, resp) => {
     }
 });
 
+//returns inventory
+router.get("/inventory", async (req, res) => {
+    try {
+        const inventoryItems = await Inventory.find();
+
+        res.send({
+            response: "this is the entire inventory",
+            inventoryItems
+        })
+    } catch (error) {
+        console.log(error.message);
+        res.status(400).send({
+            response: "Item Not Found.",
+            error: error.message
+        });
+    }
+})
+
 //Creates New Inventory Item
-router.post("/inventory", async (req, res) => {
+router.post("/addInventory", async (req, res) => {
     try {
         const newInventory = new Inventory ({
             name: req.body.name,
+            description: req.body.description,
             price: req.body.price
         });
         const inventory = await newInventory.save();

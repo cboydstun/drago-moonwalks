@@ -10,6 +10,7 @@ const inventorySchema = new Schema({
 
     description: {
         type: String,
+        required: true,
     },
     
     price: {
