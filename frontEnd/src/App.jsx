@@ -3,7 +3,7 @@ import "./App.css"
 import Root from "./routes/root.jsx";
 import Inventory from "./components/Inventory.jsx";
 import React from 'react'
-import Login from "./components/Login.jsx";
+import Login from "./components/LogIn.jsx";
 // import { Cloudinary } from '@cloudinary/url-gen';
 // import { auto } from '@cloudinary/url-gen/actions/resize';
 // import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';

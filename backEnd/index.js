@@ -3,8 +3,9 @@ import express from "express";
 import mongoose from "mongoose";
 // import testRoute from "./routes/testRoute.js"
 import inventoryRoute from "./routes/inventoryRoute.js";
+import loginRoute from "./routes/loginRoute.js"
 import cors from "cors";
-import { v2 as cloudinary } from 'cloudinary';
+// import { v2 as cloudinary } from 'cloudinary';
 
 //Express boiler plate
 const app = express();
@@ -13,6 +14,7 @@ app.use(cors());
 
 //Routers
 app.use(inventoryRoute);
+app.use(loginRoute);
 
 app.listen(process.env.PORT, () => {
     console.log(`App is now listening on port' ${process.env.PORT}.`)
