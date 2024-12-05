@@ -57,9 +57,6 @@ function App() {
   );
 };
 
-<<<<<<< Updated upstream
-export default App;
-=======
-export default {App, AppIm}
 
->>>>>>> Stashed changes
+export default App
+
