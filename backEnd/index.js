@@ -25,3 +25,14 @@ const db = mongoose.connection;
 db.once("open", ()=> {
     console.log("Database is connected")
 })
+
+//Cloudinary configure
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+    cloud_name: 'dowgufc1f',
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    secure: true
+});
+
+cloudinary.uploader.upload
