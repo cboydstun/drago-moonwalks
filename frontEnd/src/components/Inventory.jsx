@@ -22,12 +22,12 @@ export default function Inventory() {
 
     //this case must be present in order to allow inventory to load in
     if (!Array.isArray(inventory.inventoryItems)) {
-        return <div className="text-white font-bold">No inventory available</div>; // Handle non-array case gracefully (map() is not a function)
+        return <div className="text-white font-bold text-center">No inventory available</div>; // Handle non-array case gracefully (map() is not a function)
       }
     return(
         <div>
             {error && <p>Error: {error}</p>}
-            <div>
+            <div className="text-center">
                 {inventory.inventoryItems.map((e) => (//react is hungry for keys
                     <div className="text-center text-3xl text-white" key={e._id}>
                         <h1>{e.name}</h1>

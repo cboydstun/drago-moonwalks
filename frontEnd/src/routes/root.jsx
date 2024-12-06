@@ -24,8 +24,27 @@ export default function Root() {
                 src="https://media.discordapp.net/attachments/1303146516294270996/1309332345635213394/image.png?ex=67413245&is=673fe0c5&hm=d27f00db3f87f1b7e08a3dedc6adc2daf61d9a7f8df0d4ffff33135f82e01f42&=&format=webp&quality=lossless&width=372&height=352"
                 alt="Dragon Picture"></img>
             </main>
+            
+            <main className="text-left m-14 flex flex-col">
+                <NavLink to="/all">
+                    <button className="bg-slate-400 border border-black w-40 transition-transform transform hover:scale-105 hover:bg-red-700 m-1">all</button>
+                </NavLink>
+                <NavLink>
+                    <button className="bg-slate-400 border border-black w-40 transition-transform transform hover:scale-105 hover:bg-red-700 m-1">category</button>
+                </NavLink>
+                <NavLink>
+                    <button className="bg-slate-400 border border-black w-40 transition-transform transform hover:scale-105 hover:bg-red-700 m-1">category</button>
+                </NavLink>
+                <NavLink>
+                    <button className="bg-slate-400 border border-black w-40 transition-transform transform hover:scale-105 hover:bg-red-700 m-1">category</button>
+                </NavLink>
+                <NavLink>
+                    <button className="bg-slate-400 border border-black w-40 transition-transform transform hover:scale-105 hover:bg-red-700 m-1">category</button>
+                </NavLink>
+            </main>
             <Outlet></Outlet>
         </div>
+
     </div>
     )
 }
