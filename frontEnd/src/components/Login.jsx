@@ -25,6 +25,7 @@ export default function Login() {
 
             if (response.ok) {
                 setMessage("Login Successful!");
+                sessionStorage.setItem("authentication" , "true");
                 navigate("/admin");
             } else {
                 setMessage("Invalid Username or Password")
