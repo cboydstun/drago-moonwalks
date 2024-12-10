@@ -41,6 +41,8 @@ export default function Root() {
                 <NavLink>
                     <button className="bg-yellow-600 text-white rounded-full w-40 transition-transform transform hover:scale-105 hover:bg-white hover:text-yellow-600 m-1 font-bold">Category</button>
                 </NavLink>
+                src="src/routes/assets/DragoPic.png"
+                alt="Moonwalks For You!"></img>
             </main>
             <Outlet></Outlet>
         </div>
