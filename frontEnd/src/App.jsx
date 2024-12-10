@@ -3,13 +3,8 @@ import "./App.css"
 import Root from "./routes/root.jsx";
 import Inventory from "./components/Inventory.jsx";
 import React from 'react'
-import Login from "./components/LogIn.jsx";
-// import { Cloudinary } from '@cloudinary/url-gen';
-// import { auto } from '@cloudinary/url-gen/actions/resize';
-// import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
-// import { AdvancedImage } from '@cloudinary/react';
-
-//Cloudinary
+import Login from "./components/Login.jsx";
+import Booking from "./components/Booking.jsx";
 import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
@@ -52,12 +47,16 @@ function App() {
         },
         {
           path: "login",
-          element: <Login></Login>
+          element: <Login></Login>,
         },
         {
           path: "all",
           element: <Inventory></Inventory>
         },
+        {
+          path: "booking",
+          element: <Booking></Booking>
+        }
       ],
     },
   ]);

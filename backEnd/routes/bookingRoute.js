@@ -1,4 +1,4 @@
-import { json, response, Router } from "express";
+import { json, Router } from "express";
 import Booking from "../models/booking.js";
 
 const router = Router();
@@ -57,7 +57,7 @@ router.post("/booking", async (req, res) => {
         });
     } catch (error) { 
         console.log(error.message);
-        res.status(400).send({
+        res.status(400).json({
             response: "Booking Not Found.",
             error: error.message
         });
@@ -97,7 +97,7 @@ router.delete("/admin/booking/:id", async (req, res) => {
     const deleteBooking = await Booking.findByIdAndDelete(id);
 
     if (!deleteBooking) {
-        res.status(404).json({
+        return res.status(404).json({
             response: "Booking was not found!"
         });
     }
