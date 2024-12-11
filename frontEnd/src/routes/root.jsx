@@ -22,7 +22,7 @@ export default function Root() {
                 <button className="bg-red-600 hover:bg-white hover:text-red-600 text-white font-bold py-1 px-4 rounded-full">Admin</button>
                 </NavLink>
             <img className="rounded-sm absolute top-6 left-6 w-60 h-auto sm:w-40 md:w-40 lg:w-52 xl:w-60"
-                src=""
+                src="./src/routes/assets/DragoPic.png"
                 alt="Dragon Picture"/>
             </main>
             <CloudinaryComponent></CloudinaryComponent>
