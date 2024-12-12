@@ -2,6 +2,8 @@ import { Schema, model } from "mongoose";
 
 const inventorySchema = new Schema({
 
+
+    // { public_id: }
     name: {
         type: String,
         required: true,

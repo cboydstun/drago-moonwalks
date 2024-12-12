@@ -13,7 +13,7 @@ function CloudinaryComponent() {
 
   const handleUploadSuccess = (result) => {
     // Handle the successful upload, e.g., update state with the new image URL
-    console.log("Upload Success:", result);
+    console.log("Upload Success:", result.info.public_id);
   };
 
   return (
