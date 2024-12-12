@@ -26,7 +26,7 @@ router.get("/inventory", async (req, res) => {
         const inventoryItems = await Inventory.find();
 
         res.send({
-            response: "this is the entire inventory",
+            response: "This is the entire inventory",
             inventoryItems
         })
     } catch (error) {
