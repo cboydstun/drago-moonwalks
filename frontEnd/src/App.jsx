@@ -15,7 +15,7 @@ import { useEffect, useRef } from "react";
 
 
 
-
+function App() {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -28,10 +28,6 @@ import { useEffect, useRef } from "react";
         {
           path: "login",
           element: <Login></Login>,
-        },
-        {
-          path: "all",
-          element: <OneImage></OneImage>
         },
         {
           path: "booking",
