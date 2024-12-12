@@ -29,7 +29,7 @@ export default function Inventory() {
             {error && <p>Error: {error}</p>}
             <div className="text-center">
                 {inventory.inventoryItems.map((e) => (//react is hungry for keys
-                    <div key={e._id}>
+                    <div className="text-center text-3xl text-white" key={e._id}>
                         <h1>{e.name}</h1>
                         <h2>{e.description}</h2>
                         <div>price: ${e.price}</div>
