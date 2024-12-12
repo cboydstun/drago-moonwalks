@@ -4,6 +4,7 @@ import Root from "./routes/root.jsx";
 import Inventory from "./components/Inventory.jsx";
 import React from 'react'
 import Login from "./components/Login.jsx";
+
 import Booking from "./components/Booking.jsx";
 import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
@@ -13,8 +14,7 @@ import { useEffect, useRef } from "react";
 
 
 
-//good routing
-function App() {
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -30,7 +30,7 @@ function App() {
         },
         {
           path: "all",
-          element: <Inventory></Inventory>
+          element: <OneImage></OneImage>
         },
         {
           path: "booking",
@@ -40,7 +40,10 @@ function App() {
     },
   ]);
   return (
-    <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router}>
+      {/* <AdvancedImage cldImg={myImage}></AdvancedImage> */}
+
+    </RouterProvider>
   );
 };
 
