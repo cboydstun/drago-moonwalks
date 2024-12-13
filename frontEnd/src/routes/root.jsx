@@ -5,7 +5,7 @@ import GalleryComponent from "../components/GalleryComponent";
 
 export default function Root() {
     return(
-    <div className=" flex-col items-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-right">
+    <div className=" flex-col items-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-right bg-auto">
         <div>
             <header>
                 <h1 className="text-center text-white font-bold text-6xl font-serif">Drago's Moonwalks</h1>

@@ -31,7 +31,7 @@ router.get("/inventory/:id", async (req, resp) => {
 router.get("/inventory", async (req, res) => {
     try {
         const inventoryItems = await Inventory.find();
-
+      
         res.json({
             response: "This is the entire inventory",
             inventoryItems
