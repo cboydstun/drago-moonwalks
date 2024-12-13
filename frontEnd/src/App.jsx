@@ -4,7 +4,7 @@ import Root from "./routes/root.jsx";
 import Inventory from "./components/Inventory.jsx";
 import React from 'react'
 import Login from "./components/Login.jsx";
-
+import Contact from "./components/Contact.jsx";
 import Booking from "./components/Booking.jsx";
 import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
@@ -31,6 +31,10 @@ function App () {
         {
           path: "booking",
           element: <Booking></Booking>
+        },
+        {
+          path: "contact",
+          element: <Contact></Contact>
         }
       ],
     },
