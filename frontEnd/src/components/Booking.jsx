@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import booking from "../../../backEnd/models/booking";
 
 const BookingPage = () => {
     const [date, setDate] = useState(new Date()); //stores the selected date
