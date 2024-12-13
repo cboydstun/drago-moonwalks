@@ -40,7 +40,7 @@ function GalleryComponent() {
 
     return (
 
-        <div className="image-gallery">
+        <div className="gallery-images">
 
             {images.map(image => (
 
