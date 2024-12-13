@@ -24,7 +24,7 @@ function CloudinaryComponent() {
         uploadPreset="ml_default"
         onSuccess={handleUploadSuccess}
       />
-      {/* <AdvancedImage cldImg={cloudinary.image("white_folding_chair_v46ret")} /> */}
+      {/* <AdvancedImage cldImg={cloudinary.image(image.public_id)} /> */}
     </div>
   );
 }
