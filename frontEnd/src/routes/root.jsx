@@ -28,6 +28,7 @@ export default function Root() {
             <img className="rounded-sm absolute top-6 left-6 w-60 h-auto sm:w-40 md:w-40 lg:w-52 xl:w-60"
                 src={dragopic}
                 alt="Dragon Picture"/>
+
             </main>
             <CloudinaryComponent></CloudinaryComponent>
             <GalleryComponent></GalleryComponent>
