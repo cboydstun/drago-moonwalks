@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const inventorySchema = new Schema({
 
-    name: {
+    title: {
         type: String,
         required: true,
         unique: true
@@ -15,6 +15,11 @@ const inventorySchema = new Schema({
     
     price: {
         type: Number,
+        required: true
+    },
+
+    public_id: {
+        type: String,
         required: true
     },
 
