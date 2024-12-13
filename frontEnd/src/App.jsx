@@ -6,7 +6,6 @@ import React from 'react'
 import Login from "./components/Login.jsx";
 
 import Booking from "./components/Booking.jsx";
-import Contact from "./components/Contact.jsx";
 import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
@@ -36,10 +35,6 @@ import { useEffect, useRef } from "react";
         {
           path: "booking",
           element: <Booking></Booking>
-        },
-        {
-          path: "contact",
-          element: <Contact></Contact>
         }
       ],
     },
