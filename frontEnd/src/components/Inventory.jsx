@@ -1,6 +1,15 @@
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen/index";
 import {useEffect, useState} from "react";
 
+
 export default function Inventory() {
+    const cloudinary = new Cloudinary({
+        cloud: {
+          cloudName: "dowgufc1f" 
+        }
+      });
+
     const [inventory, setInventory] = useState([])
     const [error, setError] = useState("");
 
@@ -27,11 +36,12 @@ export default function Inventory() {
     return(
         <div>
             {error && <p>Error: {error}</p>}
-            <div className="text-center">
+            <div className=" grid grid-cols-5 gap-2">
                 {inventory.inventoryItems.map((e) => (//react is hungry for keys
-                    <div className="text-center text-3xl text-white" key={e._id}>
-                        <h1>{e.name}</h1>
-                        <h2>{e.description}</h2>
+                    <div className="text-white text-left flex flex-col" key={e._id}>
+                        <AdvancedImage className=" max-h-40 max-w-40" cldImg={cloudinary.image(e.public_id)}></AdvancedImage>
+                        <div>{e.name}</div>
+                        <div>{e.description}</div>
                         <div>price: ${e.price}</div>
                     </div>
                 ))}
