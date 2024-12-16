@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Inventory from "../components/Inventory";
+// import Inventory from "../components/Inventory";
 // import CloudinaryComponent from "../components/CloudinaryComponent";
 // import GalleryComponent from "../components/GalleryComponent";
 

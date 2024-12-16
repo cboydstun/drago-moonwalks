@@ -36,9 +36,9 @@ export default function Inventory() {
     return(
         <div>
             {error && <p>Error: {error}</p>}
-            <div className=" grid grid-cols-5 gap-2">
+            <div className=" grid grid-cols-5 gap-2 ">
                 {inventory.inventoryItems.map((e) => (//react is hungry for keys
-                    <div className="text-white text-left flex flex-col" key={e._id}>
+                    <div className="text-left flex flex-col p-4 bg-white border-5 border-black" key={e._id}>
                         <AdvancedImage className=" max-h-40 max-w-40" cldImg={cloudinary.image(e.public_id)}></AdvancedImage>
                         <div>{e.name}</div>
                         <div>{e.description}</div>
