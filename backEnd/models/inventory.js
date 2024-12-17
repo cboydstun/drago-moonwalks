@@ -2,7 +2,9 @@ import { Schema, model } from "mongoose";
 
 const inventorySchema = new Schema({
 
+
     title: {
+
         type: String,
         required: true,
         unique: true
