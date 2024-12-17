@@ -33,6 +33,7 @@ export default function Login() {
         } catch (error) {
             setMessage(input.message || "An error has occured. Please try again.");
         }
+        console.log(message);
     };
 
     return(
