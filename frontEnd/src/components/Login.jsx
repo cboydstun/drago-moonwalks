@@ -25,18 +25,18 @@ export default function Login() {
 
             if (response.ok) {
                 setMessage("Login Successful!");
-                sessionStorage.setItem("authentication" , "true");
+                sessionStorage.setItem("authenticated" , "true");
                 navigate("/admin");
             } else {
                 setMessage("Invalid Username or Password")
             }
         } catch (error) {
-            setMessage("An error has occurred. Please try again.")
+            setMessage(input.message || "An error has occured. Please try again.");
         }
     };
 
     return(
-        <div className="min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-center" >
+        <div className="flex text-center flex-col min-h-screen bg-transparent p-20 mr-40" >
             <header>
                 <h1 className="text-white font-bold font-serif text-4xl mb-4 text-center">LOGIN</h1>
             </header>
