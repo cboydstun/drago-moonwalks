@@ -26,8 +26,8 @@ export default function Root() {
                 <NavLink to="/login">
                 <button className="bg-red-600 hover:bg-white hover:text-red-600 text-white font-bold py-1 px-4 rounded-full">Admin</button>
                 </NavLink>
-            </main>
-        </div>
+            </div>
+        </main>
 
 
 
