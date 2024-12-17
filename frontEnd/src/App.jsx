@@ -6,13 +6,7 @@ import React from 'react'
 import Login from "./components/Login.jsx";
 import Contact from "./components/Contact.jsx";
 import Booking from "./components/Booking.jsx";
-// import { Cloudinary } from '@cloudinary/url-gen';
-// import { auto } from '@cloudinary/url-gen/actions/resize';
-// import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
-// import { AdvancedImage } from '@cloudinary/react';
-// import { useEffect, useRef } from "react";
-
-
+import Admin from "./components/Admin.jsx";
 
 function App () {
 
@@ -37,6 +31,10 @@ function App () {
           path: "contact",
           element: <Contact></Contact>
         },
+        {
+          path: "admin",
+          element: <Admin></Admin>
+        }
       ],
     },
   ]);
