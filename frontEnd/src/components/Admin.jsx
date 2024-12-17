@@ -14,11 +14,9 @@ export default function Admin() {
 }, [navigate]);
 
 return (
-    <body>
-        <main>
-            <h1>Admin Page</h1>
-        </main>
-    </body>
+    <main className="flex flex-col text-center">
+        <h1 className="font-serif text-white text-4xl font-bold">Admin Page</h1>
+    </main>
 );
 
 };
