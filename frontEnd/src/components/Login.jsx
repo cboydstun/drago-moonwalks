@@ -33,15 +33,14 @@ export default function Login() {
         } catch (error) {
             setMessage(input.message || "An error has occured. Please try again.");
         }
-        console.log(message);
     };
 
     return(
-        <div className="flex text-center flex-col min-h-screen bg-transparent p-20 mr-40" >
+        <div className="flex flex-col self-center text-center bg-transparent ml-32" >
             <header>
                 <h1 className="text-white font-bold font-serif text-4xl mb-4 text-center">LOGIN</h1>
             </header>
-            <main>
+            <main className="flex flex-col">
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label className="bg-red-600 pl-2 pr-2 text-white font-bold rounded-md text-lg">Username: </label>

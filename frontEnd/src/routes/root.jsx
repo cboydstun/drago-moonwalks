@@ -1,13 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
-// import Inventory from "../components/Inventory";
-// import CloudinaryComponent from "../components/CloudinaryComponent";
-// import GalleryComponent from "../components/GalleryComponent";
-
 
 export default function Root() {
     return(
       
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-right bg-auto">
+    <div className="grid grid-cols-1 items-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-right bg-auto">
         <img className="rounded-sm absolute top-6 left-6 w-60 h-auto sm:w-40 md:w-40 lg:w-52 xl:w-60"
             src="./src/routes/assets/DragoPic.png"
             alt="Dragon Picture"/>
@@ -16,7 +12,7 @@ export default function Root() {
             <h3 className="text-center text-white font-bold text-2xl my-4 font-serif">Parties Fundraisers and Family Reunions</h3>
         </header>
         <main className="p-6">
-            <div className="flex flex-grow gap-x-4">
+            <div className="flex flex-grow justify-center gap-x-4">
                 <NavLink to="/contact">
                     <button className="bg-yellow-600 hover:bg-white hover:text-yellow-600 text-white font-bold py-1 px-4 rounded-full">Contact</button>
                 </NavLink>

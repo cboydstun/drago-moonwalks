@@ -10,11 +10,6 @@ const inventorySchema = new Schema({
         unique: true
     },
 
-    description: {
-        type: String,
-        required: true,
-    },
-    
     price: {
         type: Number,
         required: true
@@ -24,7 +19,6 @@ const inventorySchema = new Schema({
         type: String,
         required: true
     },
-
 });
 
 export default model ("Inventory", inventorySchema)
