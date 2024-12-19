@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
-// import testRoute from "./routes/testRoute.js"
 import inventoryRoute from "./routes/inventoryRoute.js";
 import loginRoute from "./routes/loginRoute.js"
 import cors from "cors";

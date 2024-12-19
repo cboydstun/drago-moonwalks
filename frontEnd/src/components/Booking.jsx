@@ -61,6 +61,7 @@ const BookingPage = () => {
             const data = await response.json();
 
             if (response.ok) {
+                console.log("completed")
                 setMessage(data.response);
                 const updateBookings = await fetch("/admin/bookings");
                 const updatedData = await updateBookings.json();
@@ -128,7 +129,7 @@ const BookingPage = () => {
                 </div>
                 <button className= "bg-red-600 text-white rounded-md p-1 font-bold text-sm hover:bg-white hover:text-red-600"type="submit">Book Now</button>
             </form>
-            {message && <p className="font-bold text-white p-3">{message}</p>}
+            {message && <p className="font-bold text-white p-3 mb-5">{message}</p>}
         </main>
     );
 };
