@@ -36,13 +36,12 @@ export default function Inventory() {
     return(
         <div>
             {error && <p>Error: {error}</p>}
-            <div className=" grid grid-cols-5 gap-2 ">
+            <div className=" grid grid-cols-4 gap-2 mr-10 mb-10">
                 {inventory.inventoryItems.map((e) => (//react is hungry for keys
-                    <div className="text-left flex flex-col p-4 bg-white border-5 border-black" key={e._id}>
-                        <AdvancedImage className=" max-h-40 max-w-40" cldImg={cloudinary.image(e.public_id)}></AdvancedImage>
-                        <div>{e.title}</div>
-                        <div>{e.description}</div>
-                        <div>price: ${e.price}</div>
+                    <div className="text-left flex flex-col p-4 bg-white rounded-xl" key={e._id}>
+                        <AdvancedImage className="size-full max-h-40 max-w-40 self-center rounded-xl border-2 border-solid border-black" cldImg={cloudinary.image(e.public_id)}></AdvancedImage>
+                        <div className="text-black font-serif font-bold text-sm text-center p-2">{e.title}</div>
+                        <div className="text-black font-serif font-bold text-sm text-center">Price: ${e.price}</div>
                     </div>
                 ))}
             </div>

@@ -7,6 +7,7 @@ const BookingPage = () => {
     const [date, setDate] = useState(new Date()); //stores the selected date
     const [name, setName] = useState(""); //stores name
     const [location, setLocation] = useState(""); //stores location
+    const [item, setItem] = useState(""); //stores item
     const [bookings, setBookings] = useState([]); //stores bookings
     const [message, setMessage] = useState("");
 
@@ -54,6 +55,7 @@ const BookingPage = () => {
                     name,
                     date: selectedDate,
                     location,
+                    item,
                 }),
             });
             const data = await response.json();
@@ -80,9 +82,9 @@ const BookingPage = () => {
     };
 
     return (
-        <main className="flex flex-col items-center justify-center text-center">
-            <h1 className="font-serif font-bold text-white   text-2xl mb-6">Book A Reservation</h1>
-            <div className="flex justify-center mb-6">
+        <main className="flex flex-col justify-center text-center ml-32">
+            <h1 className="font-serif font-bold text-white text-4xl mb-2">Book A Reservation</h1>
+            <div className="p-6">
                 <Calendar 
                     className="text-lg text-red-600 font-bold border" 
                     onChange={dateChange} 
@@ -92,10 +94,10 @@ const BookingPage = () => {
             </div>
             <form onSubmit={bookingSubmit} className="w-full max-w-sm space-y-4">
                 <div className="flex justify-center">
-                    <label className="rounded-md pl-2 pr-2 bg-yellow-600 font-bold text-white mr-4">Name:</label>
+                    <label className="rounded-md pr-2 pl-2 bg-yellow-600 font-bold text-white mr-4">Name:</label>
                     <input
                     type="text"
-                    placeholder="Name"
+                    placeholder="First & Last"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -103,21 +105,33 @@ const BookingPage = () => {
                     />
                 </div>
                 <div className="flex justify-center">
-                    <label className="rounded-md pl-2 pr-2 mr-4 bg-yellow-600 font-bold text-white">Location:</label>
+                    <label className="rounded-md pl-2 pr-2 mr-4 bg-yellow-600 font-bold text-white">Address:</label>
                     <input
                     type="text"
-                    placeholder="Location"
+                    placeholder="Address"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     required
                     className="text-red-600 placeholder: text-center rounded-md mr-4"
                     />
                 </div>
+                <div>
+                    <label className="rounded-md pl-2 pr-2 mr-4 bg-yellow-600 font-bold text-white">Items:</label>
+                    <input
+                    type="text"
+                    placeholder="Items"
+                    value={item}
+                    onChange={(e) => setItem(e.target.value)}
+                    required
+                    className="text-red-600 placeholder: text-center rounded-md"
+                    />
+                </div>
                 <button className= "bg-red-600 text-white rounded-md p-1 font-bold text-sm hover:bg-white hover:text-red-600"type="submit">Book Now</button>
             </form>
-            {message && <p className="font-bold text-white">{message}</p>}
+            {message && <p className="font-bold text-white p-3">{message}</p>}
         </main>
     );
 };
 
 export default BookingPage;
+

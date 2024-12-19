@@ -50,7 +50,6 @@ router.post("/addInventory", async (req, res) => {
     try {
         const newInventory = new Inventory({
             title: req.body.title,
-            description: req.body.description,
             price: req.body.price,
             public_id: req.body.public_id,
         });
@@ -74,12 +73,11 @@ router.post("/addInventory", async (req, res) => {
 // Updates an existing inventory item
 router.put("/inventory/:id", async (req, resp) => {
     const { id } = req.params;
-    const { title, description, price, public_id } = req.body;
+    const { title, price, public_id } = req.body;
 
     try {
         const updatedInventory = await Inventory.findByIdAndUpdate(id, {
             title,
-            description,
             price,
             public_id
         }, { new: true });
