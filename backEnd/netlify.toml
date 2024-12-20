@@ -1,0 +1,5 @@
+
+base = "backend"
+publish = "dist"  # Or the appropriate directory for your build output
+command = "npm run build"  # Replace with your actual build command
+
