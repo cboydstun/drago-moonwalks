@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import booking from "../../../backEnd/models/booking";
 
 const BookingPage = () => {
     const [date, setDate] = useState(new Date()); //stores the selected date
@@ -14,7 +13,7 @@ const BookingPage = () => {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await fetch("/admin/bookings");
+                const response = await fetch("/admin");
                 const data = await response.json();
 
                 if (response.ok) {
@@ -38,6 +37,7 @@ const BookingPage = () => {
         e.preventDefault();
 
         const selectedDate = new Date(date).getTime();
+        console.log("Selected Date: ", selectedDate)
         const isBooked = bookings.find((booking) => booking.date === selectedDate);
 
         if (isBooked) {
@@ -46,7 +46,7 @@ const BookingPage = () => {
         }
 
         try {
-            const response = await fetch("/booking", {
+            const response = await fetch("http://localhost:3000/booking", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -59,18 +59,18 @@ const BookingPage = () => {
                 }),
             });
             const data = await response.json();
+            console.log("Response: ", data)
 
             if (response.ok) {
-                console.log("completed")
                 setMessage(data.response);
-                const updateBookings = await fetch("/admin/bookings");
+                const updateBookings = await fetch("http://localhost:3000/admin");
                 const updatedData = await updateBookings.json();
                 setBookings(updatedData.bookings);
             } else {
                 setMessage("Sorry, we could not sumbit your booking.")
             }
         } catch (error) {
-            console.log("Error submitting booking: " , error)
+            console.log("Error submitting booking: ", error)
             setMessage("Sorry, the booking failed to submit.");
         }
     };
@@ -129,7 +129,7 @@ const BookingPage = () => {
                 </div>
                 <button className= "bg-red-600 text-white rounded-md p-1 font-bold text-sm hover:bg-white hover:text-red-600"type="submit">Book Now</button>
             </form>
-            {message && <p className="font-bold text-white p-3 mb-5">{message}</p>}
+            {message && <p className="font-bold text-white p-3 mb-5 text-xl">{message}</p>}
         </main>
     );
 };
