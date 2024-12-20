@@ -3,7 +3,7 @@ import Booking from "../models/booking.js";
 
 const router = Router();
 
-router.get("/booking/:id", async (req, res) => {
+router.get("/admin/:id", async (req, res) => {
     const { id } = req.params;
     try {
         const booking = await Booking.findById(id);
@@ -25,7 +25,7 @@ router.get("/booking/:id", async (req, res) => {
 });
 
 //returns inventory
-router.get("/admin/bookings", async (req, res) => {
+router.get("/admin", async (req, res) => {
     try {
         const bookings = await Booking.find();
         res.json({
@@ -44,6 +44,8 @@ router.get("/admin/bookings", async (req, res) => {
 //Creates New Inventory Item
 router.post("/booking", async (req, res) => {
     const { name, date, location, item } = req.body
+    
+    console.log("Received Booking: ", { name, date, location, item })
     try {
         const newBooking = new Booking ({
             name,
@@ -57,7 +59,7 @@ router.post("/booking", async (req, res) => {
             booking
         });
     } catch (error) { 
-        console.log(error.message);
+        console.log("Booking Error: ", error.message);
         res.status(400).json({
             response: "Booking Not Found.",
             error: error.message
@@ -66,7 +68,7 @@ router.post("/booking", async (req, res) => {
 });
 
 //updates existing bookings
-router.put("/admin/booking/:id", async (req, res) => {
+router.put("/admin/:id", async (req, res) => {
     const { id } = req.params;
     const { name, date, location, item } = req.body;
     try {
@@ -91,7 +93,7 @@ router.put("/admin/booking/:id", async (req, res) => {
 });
 
 //deletes an Item
-router.delete("/admin/booking/:id", async (req, res) => {
+router.delete("/admin/:id", async (req, res) => {
     const { id } = req.params;
 
     try {
