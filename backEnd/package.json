@@ -25,7 +25,7 @@
   "contributors": [],
   "scripts": {
     "dev": "nodemon index.js",
-    "build": "echo 'Building project...'",
+    "build": "echo 'Building project...', netlify-lambda build backend",
     "test": ""
   },
   "dependencies": {
