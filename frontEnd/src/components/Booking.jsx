@@ -70,19 +70,19 @@ const BookingPage = () => {
     };
 
     return (
-        <main className="flex flex-col justify-center text-center p-6 sm:p-12">
-            <h1 className="font-serif font-bold text-white text-4xl sm:text-5xl mb-2">Book A Reservation</h1>
+        <main className="flex flex-col justify-center text-center">
+            <h1 className="font-serif font-bold text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2">Book A Reservation</h1>
             <div className="p-6">
                 <Calendar
-                    className="text-lg text-red-600 font-bold border"
+                    className=" sm: text-sm md:text-md lg:text-lg xl:text-xl text-red-600 font-bold border m-auto"
                     onChange={dateChange}
                     value={date}
                     tileClassName={bookedDates}
                 />
                 <form onSubmit={bookingSubmit} className="space-y-4">
-                    <div className="flex flex-col">
+                    <div className="flex flex-col mt-4">
                         <input
-                            className="text-center rounded-md p-2 text-red-600 font-bold placeholder-red-600"
+                            className="text-center rounded-md p-2 text-red-600 font-bold placeholder-red-600 m-auto"
                             placeholder="Your Name"
                             type="text"
                             value={name}
@@ -92,7 +92,7 @@ const BookingPage = () => {
                     </div>
                     <div className="flex flex-col">
                         <input
-                            className="text-center rounded-md p-2 text-red-600 font-bold placeholder-red-600"
+                            className="text-center rounded-md p-2 text-red-600 font-bold placeholder-red-600 m-auto"
                             placeholder="Location"
                             type="text"
                             value={location}
@@ -102,7 +102,7 @@ const BookingPage = () => {
                     </div>
                     <div className="flex flex-col">
                         <input
-                            className="text-center rounded-md p-2 text-red-600 font-bold placeholder-red-600"
+                            className="text-center rounded-md p-2 text-red-600 font-bold placeholder-red-600 m-auto"
                             placeholder="Item"
                             type="text"
                             value={item}
@@ -111,13 +111,13 @@ const BookingPage = () => {
                         />
                     </div>
                     <button
-                        className="w-full py-3 text-xl text-white font-bold bg-red-600 rounded-xl hover:bg-white hover:text-red-600"
+                        className="w-auto px-3 py-1 sm:text-md md:text-lg lg:text-xl xl:text-2xl text-white font-bold bg-red-600 rounded-xl hover:bg-white hover:text-red-600"
                         type="submit"
                     >
                         Reserve
                     </button>
                 </form>
-                {message && <p className="text-white font-bold mt-4">{message}</p>}
+                {message && <p className="text-white sm:text-md md:text-lg lg:text-xl xl:text-2xl font-bold mt-4">{message}</p>}
             </div>
         </main>
     );
