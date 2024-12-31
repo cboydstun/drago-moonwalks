@@ -77,7 +77,7 @@ const handleUpdate = async (id) => {
 
 return (
     <main className="flex flex-col text-center">
-        <h1 className="font-serif text-white text-4xl font-bold">Admin Page</h1>
+        <h1 className="font-serif text-white sm:text-2xl md:text-3xl lg:text-4xl font-bold">Admin Page</h1>
         {message && <p className="font-serif text-white font-bold">{message}</p>}
         <div className="overflow-x-auto mt-6">
             <table>
