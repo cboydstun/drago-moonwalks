@@ -28,6 +28,10 @@ function App () {
           element: <Inventory></Inventory>
         },
         {
+          path: ":category",
+          element: <Inventory></Inventory>
+        },
+        {
           path: "contact",
           element: <Contact></Contact>
         },

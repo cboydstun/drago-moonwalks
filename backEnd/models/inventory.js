@@ -19,8 +19,8 @@ const inventorySchema = new Schema({
         type: String,
         required: true
     },
-
-    categories: {
+  
+    category: {
         type: String,
         required: true
     },

@@ -40,17 +40,17 @@ export default function Root() {
                             All
                         </button>
                     </NavLink>
-                    <NavLink>
+                    <NavLink to="/moonwalks">
                         <button className="bg-yellow-600 text-white w-full mb-4 py-2 px-4 rounded-full hover:bg-white hover:text-yellow-600 font-bold">
                             Bouncy Houses & Moonwalks
                         </button>
                     </NavLink>
-                    <NavLink>
+                    <NavLink to="/tablesAndChairs">
                         <button className="bg-yellow-600 text-white w-full mb-4 py-2 px-4 rounded-full hover:bg-white hover:text-yellow-600 font-bold">
                             Tables & Chairs
                         </button>
                     </NavLink>
-                    <NavLink>
+                    <NavLink to="/appliances">
                         <button className="bg-yellow-600 text-white w-full mb-4 py-2 px-4 rounded-full hover:bg-white hover:text-yellow-600 font-bold">
                             Appliances
                         </button>
