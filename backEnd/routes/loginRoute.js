@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 
 const router = Router();
 
-const adminUsername = "manuelprito";
+const adminUsername = "manuelprieto";
 const passwordHash = "$2b$10$LeiReDIs5tnnKx1/H64doeSqa0ot0rngcww22bO3Bx2G9UDtby0IK"
 
 router.post("/login", async (req, res)=> {

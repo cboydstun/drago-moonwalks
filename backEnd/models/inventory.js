@@ -19,6 +19,11 @@ const inventorySchema = new Schema({
         type: String,
         required: true
     },
+
+    category: {
+        type: String,
+        required: true
+    },
 });
 
 export default model ("Inventory", inventorySchema)

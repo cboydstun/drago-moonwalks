@@ -52,6 +52,7 @@ router.post("/addInventory", async (req, res) => {
             title: req.body.title,
             price: req.body.price,
             public_id: req.body.public_id,
+            category: req.body.category,
         });
 
         const inventory = await newInventory.save();
@@ -79,7 +80,8 @@ router.put("/inventory/:id", async (req, resp) => {
         const updatedInventory = await Inventory.findByIdAndUpdate(id, {
             title,
             price,
-            public_id
+            public_id,
+            category,
         }, { new: true });
 
         if (!updatedInventory) {
@@ -97,6 +99,29 @@ router.put("/inventory/:id", async (req, resp) => {
         console.log(error.message);
         resp.status(400).json({
             response: error.message
+        });
+    }
+});
+
+//Gets Inventory by category
+
+router.get("/inventory/category/:category", async (req, res) => {
+    const { category } = req.params;
+    try {
+        const inventoryItems = await Inventory.find({ category });
+
+        if (inventoryItems.length === 0) {
+            console.log(`No inventory found for category: ${category}`)
+        }
+        res.json({
+            response: `Inventory items in category: ${category}`,
+            inventoryItems
+        });
+    } catch(error) {
+        console.log(error.message)
+        res.status(400).json({
+            response: "Error fetching items by category.",
+            error: error.message
         });
     }
 });
