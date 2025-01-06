@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://api.cloudinary.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +11,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.13.1",
+    "@cloudinary/url-gen": "^1.21.0",
+    "cloudinary": "^2.5.1",
+    "cloudinary-react": "^1.8.1",
     "react": "^18.3.1",
+    "react-calendar": "^5.1.0",
+    "react-cloudinary-upload-widget": "^2.0.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0"
   },
@@ -20,6 +27,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.14",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

@@ -1,9 +1,11 @@
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
-// import testRoute from "./routes/testRoute.js"
 import inventoryRoute from "./routes/inventoryRoute.js";
+import loginRoute from "./routes/loginRoute.js"
 import cors from "cors";
+import bookingRoute from "./routes/bookingRoute.js";
+
 
 //Express boiler plate
 const app = express();
@@ -12,6 +14,8 @@ app.use(cors());
 
 //Routers
 app.use(inventoryRoute);
+app.use(loginRoute);
+app.use(bookingRoute);
 
 app.listen(process.env.PORT, () => {
     console.log(`App is now listening on port' ${process.env.PORT}.`)
@@ -23,4 +27,8 @@ const db = mongoose.connection;
 
 db.once("open", ()=> {
     console.log("Database is connected")
-})
+});
+
+
+
+

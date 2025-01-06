@@ -1,41 +1,54 @@
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen/index";
 import {useEffect, useState} from "react";
+import { useParams } from "react-router-dom";
 
 export default function Inventory() {
-    const [inventory, setInventory] = useState([])
+    const cloudinary = new Cloudinary({
+        cloud: { cloudName: "dowgufc1f" }
+    });
+
+    const [inventory, setInventory] = useState([]);
     const [error, setError] = useState("");
+    const { category } = useParams();
 
     useEffect(() => {
-        try { //fetch inventory data
-            async function fetchInventory() {
-                const url = "http://localhost:3000/inventory";
-        
-                const response = await fetch(url);
-                const results = await response.json();
-                setInventory(results);
-                console.log(results);
+        async function fetchInventory() {
+            let url = "http://localhost:3000/inventory";
+            if (category) {
+                url = `http://localhost:3000/inventory/category/${category}`;
             }
-            fetchInventory();
-        } catch (error) {
-            setError(error.message);
+            try {
+            const response = await fetch(url);
+            const results = await response.json();
+            setInventory(results.inventoryItems);
+            } catch (error) {
+                setError("Error fetching inventory");
+                console.error(error);
+            }
         }
-    }, [])//empty array means that the code should only run once
+        fetchInventory();
+    }, [category]);
 
-    //this case must be present in order to allow inventory to load in
-    if (!Array.isArray(inventory.inventoryItems)) {
-        return <div>No inventory available</div>; // Handle non-array case gracefully (map() is not a function)
-      }
-    return(
-        <div>
+    if (!Array.isArray(inventory)) {
+        return <div className="text-white font-bold text-center">No inventory available</div>;
+    }
+
+    return (
+        <div className="p-6">
             {error && <p>Error: {error}</p>}
-            <div>
-                {inventory.inventoryItems.map((e) => (//react is hungry for keys
-                    <div key={e._id}>
-                        <h1>{e.name}</h1>
-                        <h2>{e.description}</h2>
-                        <div>price: ${e.price}</div>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+                {inventory.map((item) => (
+                    <div className="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center" key={item._id}>
+                        <AdvancedImage
+                            className="sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 xl:self-center lg:self-center md:self-center sm:self-center rounded-xl border-2 border-solid border-black"
+                            cldImg={cloudinary.image(item.public_id)}
+                        />
+                        <div className="text-black font-serif font-bold sm:text-xs md:text-sm lg:text-sm text-center p-2">{item.title}</div>
+                        <div className="text-black font-serif font-bold sm:texyt-xs md:text-sm lg:text-sm text-center">Price: ${item.price}</div>
                     </div>
                 ))}
             </div>
         </div>
-    )
+    );
 }
